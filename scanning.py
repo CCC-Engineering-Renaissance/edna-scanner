@@ -1,19 +1,27 @@
+def test(text, textToFind):
+    length = len(textToFind[1])
+    current = 0
+    for char in text:
+        if char == textToFind[1][current]:
+            current += 1
+            if current == length:
+                return textToFind[0]
+            
+    return "No eDNA found of " +  textToFind[0]
+
+
+dictionary = [["Bighead Carp", "AACTTAAATAAACAGATTATTCCACTAACAATTGATTCTCAAATTTATTACTGAATTATTAACTAAAATCTAACTCAAGTATATTATTAAAGTAAGAGACCACCTACTTATTTATATTAAGGTATTATATTCATGATAAGATCAAGGACAATAACAGTGGGGGTGGCGCAAAATGAACTATTACTTGCATCTGGTTTGGAATCTCACGGACATGGCTACAAAATTCCACCCCCGTTACATTATAACTGGCATATGGTTAAATGATGTGAGTACATACTCCTCATTAACCCCACATGCCGAGCATTCTTTTAT"], 
+              ["Silver Carp", "CCTGAGAAAAGAGTTGTTCCACTATAATTGGTTCTCAAATATTTCCTTGAAATATTAACTTCTATTTAATTTAACTATATTAATGTAGTAAGAAACCACCTACTGGTTTATATTAAGGTATTCTATTCATGATAAGATCAGGGACAATAATCGTGGGGGTGGCGCAGAATGAACTATTACTTGCATTTGGC"], 
+              ["Grass Carp", "GAGTTTCTGACTTCTACCCCCTTCTTTCCTCCTACTATTAGCCTCTTCTGGTGTTGAGGCCGGAGCTGGAACAGGGTGAACAG"], 
+              ["Black Carp", "ACACCACGTTCTTTGACCCAGCAGGCGGAGGAGACCCAATCCTATATCAACACCTGTTCTGATTCTTCGGCCACCCAGAAGTTTACATTCTTATTTTACCCGGGTTTGGGATCATTTCAC"]]
 
 print("Input text: ")
 text1 = input()
-print("Input text to find: ")
-textToFind1 = input()
+# print("Input text to find: ")
+# textToFind1 = input()
 
-test(text1, textToFind1)
+for fish in dictionary:
+    print(test(text1, fish))
 
 
-def test(text, textToFind):
-    length = len(textToFind)
-    current = 0
-    for char in text:
-        if char == textToFind[current]:
-            current += 1
-            if current == length:
-                return True
-            
-    return False
+
