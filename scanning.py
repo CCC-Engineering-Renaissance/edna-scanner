@@ -4,8 +4,10 @@ def test(text, textToFind):
     for char in text:
         if char == textToFind[1][current]:
             current += 1
-            if current == length:
-                return textToFind[0]
+        else:
+            current = 0
+        if current == length:
+            return textToFind[0]
             
     return "No eDNA found " +  textToFind[0]
 
